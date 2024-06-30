@@ -129,7 +129,11 @@ void SerieACalendarGenerator::generateCalendar() {
     system("CLS");
     std::cout << "Flushing the output stream." << std::flush;
     std::srand(static_cast<unsigned int>(std::time(0)));
-    std::random_shuffle(teamNames.begin(), teamNames.end());
+    std::random_device rd;
+    std::mt19937 g(rd());
+
+
+    std::shuffle(teamNames.begin(), teamNames.end(), g);
 
     for (int round = 0; round < totalRounds / 2; ++round) {
       //  std::cout << "Round " << round + 1 << ":-----------------------------------------------------------------------------------------\n";
