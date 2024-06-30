@@ -108,7 +108,14 @@ ROBA is the definitive 2 players experience for a simulated league.
    ```sh
    git clone https://github.com/Edo816/roba.git
    ```
-
+2. run make setup
+   ```sh
+   make setup
+   ```
+3. run make
+   ```sh
+   make
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
