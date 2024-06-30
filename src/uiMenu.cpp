@@ -16,7 +16,7 @@ UIMenu::UIMenu(SerieACalendarGenerator& calendarGenerator,CoreGameplay& gameplay
     srand(static_cast<unsigned>(time(0)));
     SetConfigFlags(FLAG_WINDOW_UNDECORATED);
     int loadinit = 0;
-    InitWindow(800, 600, "roba v0.1.0");
+    InitWindow(800, 600, "roba v0.2.5");
     if(loadinit != 2){
         loadinit = 1;
     }
@@ -115,7 +115,7 @@ int UIMenu::displayMenu() {
 
         if (menu2 == 0) {
           //DrawText("v0.1.4", GetScreenWidth()/5+400, 200, fontSize, WHITE);
-            DrawTextEx(font,"v0.1.4", {static_cast<float>(GetScreenWidth()/5+400), 200}, 20, 2, WHITE);
+            DrawTextEx(font,"v0.2.5", {static_cast<float>(GetScreenWidth()/5+400), 200}, 20, 2, WHITE);
             DrawTextureEx(menuImage, (Vector2){static_cast<float>(GetScreenWidth()/5+20), 20}, 0, 0.25f, WHITE);
             DrawRectangleRounded(rec, 2, 8, Fade(LIGHTGRAY, 0.5f));              // Draw rectangle with rounded edges
             DrawRectangleRoundedLines(rec, 2, 3, 5,BLUE);
@@ -428,7 +428,7 @@ void UIMenu::drawGeneratedCalendar() {
     //DrawText(TextFormat("  Calendario Generato anno: %d/%d ", startingYear - 1, startingYear), 310, 10, fontSize, WHITE);
       DrawTextEx(font,TextFormat("  Calendario Generato anno: %d/%d ", startingYear - 1, startingYear), { 310 , 10 }, 20, 2, YELLOW);
     //  DrawText(TextFormat("  roba v0.1.0", startingYear - 1, startingYear), 310, 40, fontSize, WHITE);
-      DrawTextEx(font,TextFormat("  roba v0.1.0", startingYear - 1, startingYear), { 310 , 40 }, 20, 2, YELLOW);
+      DrawTextEx(font,TextFormat("  roba v0.2.5", startingYear - 1, startingYear), { 310 , 40 }, 20, 2, YELLOW);
     //DrawText("Torna al menu principale", 400, 80, fontSize, BLACK);
       DrawTextEx(font,"Torna al menu principale", { 400 , 80 }, 20, 2, BLACK);
 
@@ -548,7 +548,7 @@ void UIMenu::drawCurrentCalendar() {
     //DrawText(TextFormat("  Calendario Corrente anno: %d/%d ", startingYear - 1, startingYear), 310, 10, fontSize, WHITE);
       DrawTextEx(font,TextFormat("  Calendario Generato anno: %d/%d ", startingYear - 1, startingYear), { 310 , 10 }, 20, 2, YELLOW);
     //DrawText(TextFormat("  roba v0.1.0", startingYear - 1, startingYear), 310, 40, fontSize, WHITE);
-      DrawTextEx(font,TextFormat("  roba v0.1.0", startingYear - 1, startingYear), { 310 , 40 }, 20, 2, YELLOW);
+      DrawTextEx(font,TextFormat("  roba v0.2.5", startingYear - 1, startingYear), { 310 , 40 }, 20, 2, YELLOW);
     //DrawText("Torna al menu principale", 400, 80, fontSize, BLACK);
       DrawTextEx(font,"Torna al menu principale", { 400 , 80 }, 20, 2, BLACK);
 
@@ -579,7 +579,7 @@ void UIMenu::drawStandings() {
     // Draw the standings title
     DrawTextEx(font,"-----Classifica-----", {static_cast<float>(GetScreenWidth() / 2 - MeasureText("-----Classifica-----", 20) / 2), 20}, 20, 2, WHITE);
 
-    DrawTextEx(font,"roba v0.1.0", {static_cast<float>(GetScreenWidth() / 2 + 140), 20}, 20, 2, WHITE);
+    DrawTextEx(font,"roba v0.2.5", {static_cast<float>(GetScreenWidth() / 2 + 140), 20}, 20, 2, WHITE);
 
     // Assuming teams is an array or vector of SerieATeam
     if(sortedTeams=0){
@@ -633,7 +633,7 @@ void UIMenu::drawPlayerStatus() {
     camera.zoom = 1.0f;
     // Draw Player Status for Each Team
     DrawTextEx(font,"Stato di tutti i giocatori:", {400, 10}, 20, 2, WHITE);
-    DrawTextEx(font,TextFormat("roba v0.1.0", startingYear - 1, startingYear), {400, 40}, 20, 2, WHITE);
+    DrawTextEx(font,TextFormat("roba v0.2.5", startingYear - 1, startingYear), {400, 40}, 20, 2, WHITE);
     /*DrawRectangle(400, 80, 400 - 20, 30, YELLOW);
     DrawRectangleLines(400 - 2, 80 - 2, 400 + 4 - 20, 30 + 4, RED);
     DrawRectangleLines(400 - 1, 80 - 1, 400 + 2 - 20, 30 + 2, RED);
@@ -881,7 +881,7 @@ void UIMenu::drawMenuOptions() {
       DrawRectangleRounded({-20,static_cast<float>(10 + i * spacing),300,20}, 2, 8, Fade(LIGHTGRAY, 0.5f));              // Draw rectangle with rounded edges
       DrawRectangleRoundedLines({-20,static_cast<float>(10 - 2 + i * spacing),300,20}, 2, 3, 5,BLUE);
   }
-    DrawTextEx(font,"Options: \t\t\t roba v0.1.0 \t --MENU PRINCIPALE--", {10, 10}, 20, 2, WHITE);
+    DrawTextEx(font,"Options: \t\t\t roba v0.2.5 \t --MENU PRINCIPALE--", {10, 10}, 20, 2, WHITE);
     DrawTextEx(font,"Genera Calendario Serie A", {10, static_cast<float>(10 + spacing)}, 20, 2, BLACK);
     DrawTextEx(font,"Simula prima partita della giornata o partita successiva", {10, static_cast<float>(10 + 2 * spacing)}, 20, 2, BLACK);
     DrawTextEx(font,"Calendario corrente", {10, static_cast<float>(10 + 3 * spacing)}, 20, 2, BLACK);
