@@ -137,7 +137,7 @@ ROBA is the definitive 2 players experience for a simulated league.
 
 - [ ] UPDATE KITS 24/25 AND TEAM LINEUPS
 - [x] supporto linux
-- [ ] supporto macOS?
+- [x] supporto macOS
 
 
 See the [open issues](https://github.com/Edo816/roba/issues) for a full list of proposed features (and known issues).
