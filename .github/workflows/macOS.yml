@@ -3,10 +3,10 @@ name: macOS
 on:
   push:
     branches: [ main ]
-    
+
   pull_request:
     branches: [ main ]
-    
+
 jobs:
   build:
     runs-on: macos-latest
@@ -14,18 +14,18 @@ jobs:
     - uses: actions/checkout@v2
     - name: make setup
       run: make setup
-      
-    - name: make bin/app
-      run: make bin/app
+
+    - name: make bin/roba
+      run: make bin/roba
     - name: 'export binary'
       uses: actions/upload-artifact@v2
       with:
-          name: app
-          path: bin/app
+          name: roba
+          path: bin/roba
     - name: make clean
       run: make clean
 
-    - name: make bin/app CXX=g++
-      run: make bin/app CXX=g++
+    - name: make bin/roba CXX=g++
+      run: make bin/roba CXX=g++
     - name: make clean
       run: make clean

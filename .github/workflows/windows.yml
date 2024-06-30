@@ -3,38 +3,38 @@ name: Windows
 on:
   push:
     branches: [ main ]
-    
+
   pull_request:
     branches: [ main ]
-    
+
 jobs:
   build:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-      
+
     - name: make setup
       run: mingw32-make setup
       shell: cmd
-      
-    - name: make bin/app
-      run: mingw32-make bin/app
+
+    - name: make bin/roba
+      run: mingw32-make bin/roba
       shell: cmd
-      
+
     - name: 'export binary'
       uses: actions/upload-artifact@v2
       with:
-          name: app.exe
-          path: bin/app.exe
-      
+          name: roba.exe
+          path: bin/roba.exe
+
     - name: make clean
       run: mingw32-make clean
       shell: cmd
 
-    - name: make bin/app CXX=g++
-      run: mingw32-make bin/app CXX=g++
+    - name: make bin/roba CXX=g++
+      run: mingw32-make bin/roba CXX=g++
       shell: cmd
-  
+
     - name: make clean
       run: mingw32-make clean
       shell: cmd
