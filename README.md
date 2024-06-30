@@ -20,8 +20,6 @@
 -->
 
 
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 
 
 
@@ -166,11 +164,7 @@ Project Link: [https://github.com/Edo816/roba](https://github.com/Edo816/roba)
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[issues-shield]: https://img.shields.io/github/issues/Edo816/roba.svg?style=for-the-badge
-[issues-url]: https://github.com/Edo816/roba/issues
-[license-shield]: https://img.shields.io/github/license/Edo816/roba.svg?style=for-the-badge
-[license-url]: https://github.com/Edo816/roba/blob/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
+
 [Raylib]: https://img.shields.io/badge/Raylib-000000.svg?style=for-the-badge&logo=Raylib&logoColor=white
 [Raylib-url]: https://www.raylib.com/
 [C++]: https://img.shields.io/badge/C++-00599C.svg?style=for-the-badge&logo=C++&logoColor=white
