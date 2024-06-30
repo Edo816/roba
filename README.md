@@ -36,7 +36,7 @@
   <p align="center">
     an original football game!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://docs.google.com/document/d/1GKln2wASGXKx29XEX4jStX8-gqNn-gaeOCCDW9thXSs/edit?usp=sharing"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/Edo816/roba">View Demo</a>
@@ -78,7 +78,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Product Name Screen Shot][product-screenshot1]
+![Product Name Screen Shot][product-screenshot2]
+
 
 ROBA is the definitive 2 players experience for a simulated league.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -163,6 +165,8 @@ Project Link: [https://github.com/Edo816/roba](https://github.com/Edo816/roba)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[product-screenshot1]: images/image1.png
+[product-screenshot2]: images/image2.png
 
 
 [Raylib]: https://img.shields.io/badge/Raylib-000000.svg?style=for-the-badge&logo=Raylib&logoColor=white
