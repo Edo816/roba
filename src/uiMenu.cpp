@@ -633,7 +633,7 @@ void UIMenu::drawStandings() {
     DrawTextEx(font,"roba v0.2.5", {static_cast<float>(GetScreenWidth() / 2 + 140), 20}, 20, 2, WHITE);
 
     // Assuming teams is an array or vector of SerieATeam
-    if(sortedTeams=0){
+    if(sortedTeams==0){
       std::sort(calendarGenerator.teams.begin(), calendarGenerator.teams.end(), [](const SerieATeam& a, const SerieATeam& b) {
           return a.points > b.points;
           sortedTeams = 1;
