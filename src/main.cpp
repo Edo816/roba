@@ -1,11 +1,13 @@
 #include <iostream>
 #include "uiMenu.h"
 #include "SerieACalendarGenerator.h"
+#include "robaEditor.h"
 int main() {
 
     SerieACalendarGenerator generator;
     CoreGameplay gameplay(generator);
-    UIMenu uiMenu(generator,gameplay);
+    robaFileFormat editor;
+    UIMenu uiMenu(generator,gameplay, editor);
     uiMenu.font = LoadFontEx("grafica/Fonts/Font.ttf",40,0,0);
     int choice = 0;
     int currentRound = 0;

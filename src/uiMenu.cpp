@@ -4,6 +4,7 @@
 #include "SerieACalendarGenerator.h"
 #include <algorithm>
 #include "coreGameplay.h"
+#include "robaEditor.h"
 #include <string>
 #define GRID_SIZE 10// Adjust the grid size as needed
 #define IMAGE_SIZE 50 // Adjust the image size as needed
@@ -12,7 +13,7 @@
   Vector2  positions[GRID_SIZE * GRID_SIZE];
 int UIMenu::currentRound = 0;
 
-UIMenu::UIMenu(SerieACalendarGenerator& calendarGenerator,CoreGameplay& gameplay) : choice(0), spacing(40), fontSize(20), calendarGenerator(calendarGenerator) , gameplay(gameplay){
+UIMenu::UIMenu(SerieACalendarGenerator& calendarGenerator,CoreGameplay& gameplay, robaFileFormat& editor ) : choice(0), spacing(40), fontSize(20), calendarGenerator(calendarGenerator) , gameplay(gameplay), editor(editor){
     srand(static_cast<unsigned>(time(0)));
     SetConfigFlags(FLAG_WINDOW_UNDECORATED);
     int loadinit = 0;
@@ -130,8 +131,20 @@ int UIMenu::displayMenu() {
             DrawRectangleLines(0 - 2, 350 - 2, 400 + 4 - 20, 30 + 4, RED);
             DrawRectangleLines(0 - 1, 350 - 1, 400 + 2 - 20, 30 + 2, RED);
             DrawRectangleLines(0, 350, 400 - 20, 30, RED);*/
+
+
+        /*    DrawRectangle(0, 350, 400 - 20, 30, YELLOW);
+            DrawRectangleLines(0 - 2, 350 - 2, 400 + 4 - 20, 30 + 4, RED);
+            DrawRectangleLines(0 - 1, 350 - 1, 400 + 2 - 20, 30 + 2, RED);
+            DrawRectangleLines(0, 350, 400 - 20, 30, RED);*/
+            DrawRectangleRounded({GetScreenWidth()-320,250,350,20}, 2, 8, Fade(LIGHTGRAY, 0.5f));              // Draw rectangle with rounded edges
+            DrawRectangleRoundedLines({GetScreenWidth()-320,250,350,20}, 2, 3, 5,BLUE);
+            DrawTextEx(font,"ROBA EDITOR", { GetScreenWidth()-220 , 250 }, 20, 2, BLACK);
+
             DrawRectangleRounded({-20,350,300,20}, 2, 8, Fade(LIGHTGRAY, 0.5f));              // Draw rectangle with rounded edges
             DrawRectangleRoundedLines({-20,350,300,20}, 2, 3, 5,BLUE);
+          //  DrawText("OPZIONI", 20, 350, fontSize, BLACK);
+
           //  DrawText("OPZIONI", 20, 350, fontSize, BLACK);
             DrawTextEx(font,"OPZIONI", { 20 , 350 }, 20, 2, BLACK);
 
@@ -144,6 +157,22 @@ int UIMenu::displayMenu() {
           //DrawText("QUIT", 20, 450, fontSize, BLACK);
             DrawTextEx(font,"QUIT", { 20 , 450 }, 20, 2, BLACK);
             // Check if the button is pressed
+            if (CheckCollisionPointRec(Vector2{ static_cast<float>(GetMouseX()), static_cast<float>(GetMouseY()) },
+                                       Rectangle{GetScreenWidth()-320,250,350,20})) {
+                if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+
+                    std::cout << "roba editor" << '\n';
+                    menu2 = 3;
+                    menu1 = 0;
+                    editor.messageCount = 0;
+
+                }
+                    DrawRectangleRounded({GetScreenWidth()-320,250,350,20}, 2, 8, Fade(LIGHTGRAY, 0.5f));
+
+                    //DrawText("GIOCA", 20, 250, fontSize, BLACK);
+                    DrawTextEx(font,"ROBA EDITOR", {GetScreenWidth()-220 , 250 }, 20, 2, BLACK);
+
+            }
             if (CheckCollisionPointRec(Vector2{ static_cast<float>(GetMouseX()), static_cast<float>(GetMouseY()) },
                                        Rectangle{ 0, 250, 400 - 20, 30 })) {
                 if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
@@ -211,6 +240,28 @@ int UIMenu::displayMenu() {
                 DrawTextEx(font,"PACCHETTO KITS 2023/2024:", { 485 , 350 }, 20, 2, WHITE);
         }
 
+
+          if(menu2 == 3){
+            editor.drawUi(font);
+            editor.updateUi(menu2,menu1,choice);
+            if(!editor.fileCheck(editor.fileName)){
+              if (editor.messageCount == 0) {
+                  std::cout << "kits file not found" << '\n';
+
+                  editor.messageCount = editor.messageCount + 1;
+              }
+            bool fileCreateBox =   GuiMessageBoxYesNo("Titolo", " file \"kits-pack.roba\" \n not  found in location \n \"CurrentKitsPack/\" \n do you want \n to create it? ");
+              if(fileCreateBox == true){
+
+              }else{
+                menu2 = 0;
+                menu1 = 0;
+                choice = 0;
+              }
+            }
+
+
+          }
           if(menu2 == 2){
             MainMenuOptions();
 

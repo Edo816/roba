@@ -6,12 +6,13 @@
 #include <raylib.h>
 #include "SerieACalendarGenerator.h"
 #include "coreGameplay.h"
+#include "robaEditor.h"
 class CoreGameplay;
 class UIMenu {
 
 
 public:
-    UIMenu(SerieACalendarGenerator& calendarGenerator, CoreGameplay& gameplay);
+    UIMenu(SerieACalendarGenerator& calendarGenerator, CoreGameplay& gameplay, robaFileFormat& editor);
     //UIMenu();
     ~UIMenu();
     enum class MenuState {
@@ -48,6 +49,7 @@ public:
 private:
     SerieACalendarGenerator& calendarGenerator;
     CoreGameplay& gameplay;
+    robaFileFormat& editor;
     int spacing;
     int fontSize;
     Texture2D Tutorial;
