@@ -21,7 +21,7 @@ UIMenu::UIMenu(SerieACalendarGenerator& calendarGenerator,CoreGameplay& gameplay
     if(loadinit != 2){
         loadinit = 1;
     }
-    if(loadinit = 1 && loadinit != 2){
+    if(loadinit == 1 && loadinit != 2){
       backgroundImage = LoadTexture("grafica/sfondo.png");
       ball = LoadTexture("grafica/ball1.png");
      for (int i = 0; i < 20; i++) {
@@ -137,9 +137,9 @@ int UIMenu::displayMenu() {
             DrawRectangleLines(0 - 2, 350 - 2, 400 + 4 - 20, 30 + 4, RED);
             DrawRectangleLines(0 - 1, 350 - 1, 400 + 2 - 20, 30 + 2, RED);
             DrawRectangleLines(0, 350, 400 - 20, 30, RED);*/
-            DrawRectangleRounded({GetScreenWidth()-320,250,350,20}, 2, 8, Fade(LIGHTGRAY, 0.5f));              // Draw rectangle with rounded edges
-            DrawRectangleRoundedLines({GetScreenWidth()-320,250,350,20}, 2, 3, 5,BLUE);
-            DrawTextEx(font,"ROBA EDITOR", { GetScreenWidth()-220 , 250 }, 20, 2, BLACK);
+            DrawRectangleRounded({(float)GetScreenWidth()-320,250,350,20}, 2, 8, Fade(LIGHTGRAY, 0.5f));              // Draw rectangle with rounded edges
+            DrawRectangleRoundedLines({(float)GetScreenWidth()-320,250,350,20}, 2, 3, 5,BLUE);
+            DrawTextEx(font,"ROBA EDITOR", { (float)GetScreenWidth()-220 , 250 }, 20, 2, BLACK);
 
             DrawRectangleRounded({-20,350,300,20}, 2, 8, Fade(LIGHTGRAY, 0.5f));              // Draw rectangle with rounded edges
             DrawRectangleRoundedLines({-20,350,300,20}, 2, 3, 5,BLUE);
@@ -158,7 +158,7 @@ int UIMenu::displayMenu() {
             DrawTextEx(font,"QUIT", { 20 , 450 }, 20, 2, BLACK);
             // Check if the button is pressed
             if (CheckCollisionPointRec(Vector2{ static_cast<float>(GetMouseX()), static_cast<float>(GetMouseY()) },
-                                       Rectangle{GetScreenWidth()-320,250,350,20})) {
+                                       Rectangle{(float)GetScreenWidth()-320,250,350,20})) {
                 if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
 
                     std::cout << "roba editor" << '\n';
@@ -167,10 +167,10 @@ int UIMenu::displayMenu() {
                     editor.messageCount = 0;
 
                 }
-                    DrawRectangleRounded({GetScreenWidth()-320,250,350,20}, 2, 8, Fade(LIGHTGRAY, 0.5f));
+                    DrawRectangleRounded({(float)GetScreenWidth()-320,250,350,20}, 2, 8, Fade(LIGHTGRAY, 0.5f));
 
                     //DrawText("GIOCA", 20, 250, fontSize, BLACK);
-                    DrawTextEx(font,"ROBA EDITOR", {GetScreenWidth()-220 , 250 }, 20, 2, BLACK);
+                    DrawTextEx(font,"ROBA EDITOR", {(float)GetScreenWidth()-220 , 250 }, 20, 2, BLACK);
 
             }
             if (CheckCollisionPointRec(Vector2{ static_cast<float>(GetMouseX()), static_cast<float>(GetMouseY()) },
